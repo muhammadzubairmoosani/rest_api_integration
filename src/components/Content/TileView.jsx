@@ -14,35 +14,11 @@ const TileView = ({ data, onEdit, onFlag, onDelete }) => {
         >
           <h3 className="text-lg font-semibold mb-2">{item.name}</h3>
           <p className="text-sm text-gray-600">Email: {item.email}</p>
-          <div className="flex justify-end space-x-2 mt-4">
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                onEdit(item);
-              }}
-              className="text-blue-500 hover:text-blue-700"
-            >
-              <FaEdit />
-            </button>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                onFlag(item);
-              }}
-              className="text-yellow-500 hover:text-yellow-700"
-            >
-              <FaFlag />
-            </button>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                onDelete(item);
-              }}
-              className="text-red-500 hover:text-red-700"
-            >
-              <FaTrash />
-            </button>
-          </div>
+          <p className="text-sm text-gray-600">Username: {item.username}</p>
+          <p className="text-sm text-gray-600">Phone: {item.phone}</p>
+          <p className="text-sm text-gray-600">Website: {item.website}</p>
+          <p className="text-sm text-gray-600">Company: {item.company?.name || ''}</p>
+          <p className="text-sm text-gray-600">Adress: {`${item.address?.suite || ''}, ${item.address?.street || ''}, ${item.address?.city || ''}`}</p>
         </div>
       ))}
     </div>
